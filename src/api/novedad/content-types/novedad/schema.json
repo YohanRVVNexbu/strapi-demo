@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "novedades",
+  "info": {
+    "singularName": "novedad",
+    "pluralName": "novedades",
+    "displayName": "Novedades",
+    "description": "Blog y noticias de la empresa"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo",
+      "required": true
+    },
+    "extracto": {
+      "type": "text",
+      "required": true,
+      "maxLength": 300
+    },
+    "contenido": {
+      "type": "richtext",
+      "required": true
+    },
+    "imagenPrincipal": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "categoria": {
+      "type": "enumeration",
+      "enum": [
+        "noticia",
+        "articulo-tecnico",
+        "caso-de-estudio",
+        "evento",
+        "comunicado"
+      ],
+      "required": true
+    },
+    "autor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::miembro-equipo.miembro-equipo"
+    },
+    "fechaPublicacion": {
+      "type": "date",
+      "required": false
+    },
+    "destacado": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "industriasRelacionadas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::industria.industria"
+    },
+    "solucionesRelacionadas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::solucion.solucion"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "compartido.seo"
+    }
+  }
+}

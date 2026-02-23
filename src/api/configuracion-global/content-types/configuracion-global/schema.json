@@ -1,0 +1,69 @@
+{
+  "kind": "singleType",
+  "collectionName": "configuraciones_globales",
+  "info": {
+    "singularName": "configuracion-global",
+    "pluralName": "configuraciones-globales",
+    "displayName": "Configuracion Global",
+    "description": "Datos globales del sitio: logo, contacto, redes sociales, footer"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "nombreEmpresa": {
+      "type": "string",
+      "required": true,
+      "default": "Andexport"
+    },
+    "slogan": {
+      "type": "string",
+      "required": false
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "logoBlanco": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "favicon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "contactoPrincipal": {
+      "type": "component",
+      "repeatable": false,
+      "component": "compartido.info-contacto"
+    },
+    "redesSociales": {
+      "type": "component",
+      "repeatable": true,
+      "component": "compartido.enlace-social"
+    },
+    "textoFooter": {
+      "type": "text",
+      "required": false
+    },
+    "avisoLegal": {
+      "type": "richtext",
+      "required": false
+    },
+    "politicaPrivacidad": {
+      "type": "richtext",
+      "required": false
+    },
+    "seoGlobal": {
+      "type": "component",
+      "repeatable": false,
+      "component": "compartido.seo"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_bloques_hero",
+  "info": {
+    "displayName": "Hero",
+    "description": "Seccion hero principal",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true
+    },
+    "subtitulo": {
+      "type": "text",
+      "required": false
+    },
+    "imagenFondo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "bloques.cta"
+    }
+  }
+}

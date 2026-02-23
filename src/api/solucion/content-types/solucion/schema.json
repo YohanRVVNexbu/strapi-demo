@@ -1,0 +1,99 @@
+{
+  "kind": "collectionType",
+  "collectionName": "soluciones",
+  "info": {
+    "singularName": "solucion",
+    "pluralName": "soluciones",
+    "displayName": "Soluciones",
+    "description": "Catalogo de soluciones tecnicas de Andexport"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nombre",
+      "required": true
+    },
+    "descripcionCorta": {
+      "type": "text",
+      "required": true,
+      "maxLength": 300
+    },
+    "descripcionCompleta": {
+      "type": "richtext",
+      "required": false
+    },
+    "imagenPrincipal": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "galeria": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images", "files"]
+    },
+    "lineaNegocio": {
+      "type": "enumeration",
+      "enum": [
+        "instrumentacion",
+        "automatizacion",
+        "control-de-procesos",
+        "seguridad-industrial",
+        "energia",
+        "medioambiente"
+      ],
+      "required": true
+    },
+    "caracteristicasTecnicas": {
+      "type": "richtext",
+      "required": false
+    },
+    "aplicaciones": {
+      "type": "text",
+      "required": false
+    },
+    "fichaTecnica": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["files"]
+    },
+    "destacado": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "orden": {
+      "type": "integer",
+      "default": 0,
+      "required": false
+    },
+    "industrias": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::industria.industria",
+      "inversedBy": "soluciones"
+    },
+    "proyectos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::proyecto.proyecto",
+      "mappedBy": "solucionPrincipal"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "compartido.seo"
+    }
+  }
+}

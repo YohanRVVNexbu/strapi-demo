@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_compartido_enlace_social",
+  "info": {
+    "displayName": "Enlace Social",
+    "description": "Red social con URL",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "plataforma": {
+      "type": "enumeration",
+      "enum": ["linkedin", "facebook", "instagram", "twitter", "youtube"],
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proyectos",
+  "info": {
+    "singularName": "proyecto",
+    "pluralName": "proyectos",
+    "displayName": "Proyectos",
+    "description": "Casos de exito y proyectos realizados"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo",
+      "required": true
+    },
+    "extracto": {
+      "type": "text",
+      "required": true,
+      "maxLength": 300
+    },
+    "descripcion": {
+      "type": "richtext",
+      "required": false
+    },
+    "cliente": {
+      "type": "string",
+      "required": false
+    },
+    "ubicacion": {
+      "type": "string",
+      "required": false
+    },
+    "anio": {
+      "type": "integer",
+      "required": false
+    },
+    "desafio": {
+      "type": "richtext",
+      "required": false
+    },
+    "solucionAplicada": {
+      "type": "richtext",
+      "required": false
+    },
+    "resultados": {
+      "type": "richtext",
+      "required": false
+    },
+    "imagenPrincipal": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "galeria": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "destacado": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "industria": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::industria.industria",
+      "inversedBy": "proyectos"
+    },
+    "solucionPrincipal": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::solucion.solucion",
+      "inversedBy": "proyectos"
+    },
+    "estadisticas": {
+      "type": "component",
+      "repeatable": true,
+      "component": "bloques.estadistica"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "compartido.seo"
+    }
+  }
+}

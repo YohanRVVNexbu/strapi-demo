@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_bloques_estadistica",
+  "info": {
+    "displayName": "Estadistica",
+    "description": "Numero destacado con etiqueta",
+    "icon": "chartBubble"
+  },
+  "options": {},
+  "attributes": {
+    "numero": {
+      "type": "string",
+      "required": true
+    },
+    "etiqueta": {
+      "type": "string",
+      "required": true
+    },
+    "sufijo": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contactos",
+  "info": {
+    "singularName": "contacto",
+    "pluralName": "contactos",
+    "displayName": "Contactos / Leads",
+    "description": "Oportunidades comerciales capturadas desde formularios del sitio"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "nombreCompleto": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "telefono": {
+      "type": "string",
+      "required": false
+    },
+    "empresa": {
+      "type": "string",
+      "required": false
+    },
+    "cargo": {
+      "type": "string",
+      "required": false
+    },
+    "mensaje": {
+      "type": "text",
+      "required": false
+    },
+    "origen": {
+      "type": "enumeration",
+      "enum": [
+        "formulario-contacto",
+        "formulario-cotizacion",
+        "landing-solucion",
+        "landing-industria",
+        "descarga-ficha-tecnica",
+        "evento",
+        "referido",
+        "otro"
+      ],
+      "required": true,
+      "default": "formulario-contacto"
+    },
+    "estado": {
+      "type": "enumeration",
+      "enum": [
+        "nuevo",
+        "contactado",
+        "en-seguimiento",
+        "calificado",
+        "propuesta-enviada",
+        "ganado",
+        "perdido",
+        "descartado"
+      ],
+      "required": true,
+      "default": "nuevo"
+    },
+    "prioridad": {
+      "type": "enumeration",
+      "enum": ["baja", "media", "alta", "urgente"],
+      "default": "media",
+      "required": false
+    },
+    "notas": {
+      "type": "richtext",
+      "required": false
+    },
+    "fechaContacto": {
+      "type": "datetime",
+      "required": false
+    },
+    "asignadoA": {
+      "type": "string",
+      "required": false
+    },
+    "industriaInteres": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::industria.industria"
+    },
+    "solucionInteres": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::solucion.solucion"
+    },
+    "paginaOrigen": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

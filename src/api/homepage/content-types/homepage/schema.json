@@ -1,0 +1,66 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Pagina de Inicio",
+    "description": "Contenido de la pagina principal del sitio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "required": true,
+      "component": "bloques.hero"
+    },
+    "tituloSoluciones": {
+      "type": "string",
+      "default": "Nuestras Soluciones"
+    },
+    "subtituloSoluciones": {
+      "type": "text",
+      "required": false
+    },
+    "solucionesDestacadas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::solucion.solucion"
+    },
+    "tituloIndustrias": {
+      "type": "string",
+      "default": "Industrias que Atendemos"
+    },
+    "estadisticas": {
+      "type": "component",
+      "repeatable": true,
+      "component": "bloques.estadistica"
+    },
+    "tituloProyectos": {
+      "type": "string",
+      "default": "Proyectos Destacados"
+    },
+    "proyectosDestacados": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::proyecto.proyecto"
+    },
+    "ctaPrincipal": {
+      "type": "component",
+      "repeatable": false,
+      "component": "bloques.cta"
+    },
+    "tituloNovedades": {
+      "type": "string",
+      "default": "Ultimas Novedades"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "compartido.seo"
+    }
+  }
+}

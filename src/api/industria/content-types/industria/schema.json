@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "industrias",
+  "info": {
+    "singularName": "industria",
+    "pluralName": "industrias",
+    "displayName": "Industrias",
+    "description": "Industrias a las que Andexport provee soluciones"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true,
+      "maxLength": 150
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nombre",
+      "required": true
+    },
+    "descripcion": {
+      "type": "richtext",
+      "required": false
+    },
+    "extracto": {
+      "type": "text",
+      "required": true,
+      "maxLength": 250
+    },
+    "icono": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "imagenPrincipal": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "orden": {
+      "type": "integer",
+      "default": 0,
+      "required": false
+    },
+    "activa": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    },
+    "soluciones": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::solucion.solucion",
+      "mappedBy": "industrias"
+    },
+    "proyectos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::proyecto.proyecto",
+      "mappedBy": "industria"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "compartido.seo"
+    }
+  }
+}

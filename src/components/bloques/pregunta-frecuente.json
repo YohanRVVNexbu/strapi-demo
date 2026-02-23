@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_bloques_pregunta_frecuente",
+  "info": {
+    "displayName": "Pregunta Frecuente",
+    "description": "Pregunta y respuesta",
+    "icon": "question"
+  },
+  "options": {},
+  "attributes": {
+    "pregunta": {
+      "type": "string",
+      "required": true
+    },
+    "respuesta": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

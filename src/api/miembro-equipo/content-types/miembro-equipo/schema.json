@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "equipo",
+  "info": {
+    "singularName": "miembro-equipo",
+    "pluralName": "miembros-equipo",
+    "displayName": "Equipo",
+    "description": "Miembros del equipo Andexport"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "cargo": {
+      "type": "string",
+      "required": true
+    },
+    "departamento": {
+      "type": "enumeration",
+      "enum": [
+        "direccion",
+        "comercial",
+        "ingenieria",
+        "operaciones",
+        "marketing",
+        "administracion"
+      ],
+      "required": true
+    },
+    "bio": {
+      "type": "text",
+      "required": false,
+      "maxLength": 500
+    },
+    "foto": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "email": {
+      "type": "email",
+      "required": false
+    },
+    "linkedin": {
+      "type": "string",
+      "required": false
+    },
+    "orden": {
+      "type": "integer",
+      "default": 0,
+      "required": false
+    },
+    "visible": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    }
+  }
+}

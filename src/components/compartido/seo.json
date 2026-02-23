@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_compartido_seo",
+  "info": {
+    "displayName": "SEO",
+    "description": "Metadatos SEO para cualquier pagina",
+    "icon": "search"
+  },
+  "options": {},
+  "attributes": {
+    "metaTitulo": {
+      "type": "string",
+      "required": true,
+      "maxLength": 70
+    },
+    "metaDescripcion": {
+      "type": "text",
+      "required": true,
+      "maxLength": 160
+    },
+    "metaImagen": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "palabrasClave": {
+      "type": "text",
+      "required": false
+    },
+    "canonicalURL": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

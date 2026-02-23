@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_compartido_info_contacto",
+  "info": {
+    "displayName": "Info de Contacto",
+    "description": "Datos de contacto reutilizables",
+    "icon": "phone"
+  },
+  "options": {},
+  "attributes": {
+    "telefono": {
+      "type": "string",
+      "required": false
+    },
+    "email": {
+      "type": "email",
+      "required": false
+    },
+    "direccion": {
+      "type": "text",
+      "required": false
+    },
+    "horario": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

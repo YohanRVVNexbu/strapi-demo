@@ -1,0 +1,82 @@
+{
+  "kind": "singleType",
+  "collectionName": "paginas_nosotros",
+  "info": {
+    "singularName": "pagina-nosotros",
+    "pluralName": "paginas-nosotros",
+    "displayName": "Pagina Nosotros",
+    "description": "Seccion institucional - historia, valores y equipo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "tituloHero": {
+      "type": "string",
+      "required": true,
+      "default": "Sobre Andexport"
+    },
+    "subtituloHero": {
+      "type": "text",
+      "required": false
+    },
+    "imagenHero": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "tituloHistoria": {
+      "type": "string",
+      "default": "Nuestra Historia"
+    },
+    "contenidoHistoria": {
+      "type": "richtext",
+      "required": false
+    },
+    "anioFundacion": {
+      "type": "integer",
+      "required": false
+    },
+    "estadisticasEmpresa": {
+      "type": "component",
+      "repeatable": true,
+      "component": "bloques.estadistica"
+    },
+    "tituloMision": {
+      "type": "string",
+      "default": "Nuestra Mision"
+    },
+    "mision": {
+      "type": "text",
+      "required": false
+    },
+    "tituloVision": {
+      "type": "string",
+      "default": "Nuestra Vision"
+    },
+    "vision": {
+      "type": "text",
+      "required": false
+    },
+    "valores": {
+      "type": "json",
+      "required": false
+    },
+    "certificaciones": {
+      "type": "component",
+      "repeatable": true,
+      "component": "compartido.imagen-con-texto"
+    },
+    "ctaContacto": {
+      "type": "component",
+      "repeatable": false,
+      "component": "bloques.cta"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "compartido.seo"
+    }
+  }
+}

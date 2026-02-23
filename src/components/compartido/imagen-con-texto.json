@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_compartido_imagen_con_texto",
+  "info": {
+    "displayName": "Imagen con Texto",
+    "description": "Imagen con titulo y descripcion opcional",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
+    },
+    "titulo": {
+      "type": "string",
+      "required": false
+    },
+    "descripcion": {
+      "type": "text",
+      "required": false
+    }
+  }
+}
